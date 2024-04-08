@@ -20,6 +20,8 @@
 		E46BC8332BC435970032611A /* Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = E46BC8322BC435970032611A /* Notes.txt */; };
 		E46BC8752BC4543C0032611A /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = E46BC8742BC4543C0032611A /* Readme.md */; };
 		E46BC8912BC4728B0032611A /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BC8902BC4728B0032611A /* AddBookView.swift */; };
+		E46BC8972BC47B720032611A /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BC8962BC47B720032611A /* EditBookView.swift */; };
+		E46BC8992BC47C140032611A /* OAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BC8982BC47C140032611A /* OAError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		E46BC8322BC435970032611A /* Notes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 		E46BC8742BC4543C0032611A /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		E46BC8902BC4728B0032611A /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		E46BC8962BC47B720032611A /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
+		E46BC8982BC47C140032611A /* OAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				E46BC7FA2BC429160032611A /* ContentView.swift */,
 				E46BC8302BC433EC0032611A /* BookView.swift */,
 				E46BC8902BC4728B0032611A /* AddBookView.swift */,
+				E46BC8962BC47B720032611A /* EditBookView.swift */,
+				E46BC8982BC47C140032611A /* OAError.swift */,
 				E46BC7FC2BC429170032611A /* Assets.xcassets */,
 				E46BC7FE2BC429170032611A /* ObserveAnalyze.entitlements */,
 				E46BC7FF2BC429170032611A /* Preview Content */,
@@ -289,9 +295,11 @@
 			files = (
 				E46BC7FB2BC429160032611A /* ContentView.swift in Sources */,
 				E46BC8912BC4728B0032611A /* AddBookView.swift in Sources */,
+				E46BC8992BC47C140032611A /* OAError.swift in Sources */,
 				E46BC7F92BC429160032611A /* ObserveAnalyzeApp.swift in Sources */,
 				E46BC82D2BC42D640032611A /* Library.swift in Sources */,
 				E46BC8292BC429860032611A /* Book.swift in Sources */,
+				E46BC8972BC47B720032611A /* EditBookView.swift in Sources */,
 				E46BC8312BC433EC0032611A /* BookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
