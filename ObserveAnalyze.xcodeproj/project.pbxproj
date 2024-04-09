@@ -22,6 +22,9 @@
 		E46BC8912BC4728B0032611A /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BC8902BC4728B0032611A /* AddBookView.swift */; };
 		E46BC8972BC47B720032611A /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BC8962BC47B720032611A /* EditBookView.swift */; };
 		E46BC8992BC47C140032611A /* OAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BC8982BC47C140032611A /* OAError.swift */; };
+		E48D12472BC59F4800154725 /* Patron.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D12462BC59F4800154725 /* Patron.swift */; };
+		E48D12492BC5A18100154725 /* AddPatronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D12482BC5A18100154725 /* AddPatronView.swift */; };
+		E48D124B2BC5A31800154725 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D124A2BC5A31800154725 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		E46BC8902BC4728B0032611A /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		E46BC8962BC47B720032611A /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
 		E46BC8982BC47C140032611A /* OAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAError.swift; sourceTree = "<group>"; };
+		E48D12462BC59F4800154725 /* Patron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patron.swift; sourceTree = "<group>"; };
+		E48D12482BC5A18100154725 /* AddPatronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPatronView.swift; sourceTree = "<group>"; };
+		E48D124A2BC5A31800154725 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,8 @@
 				E46BC8302BC433EC0032611A /* BookView.swift */,
 				E46BC8902BC4728B0032611A /* AddBookView.swift */,
 				E46BC8962BC47B720032611A /* EditBookView.swift */,
+				E48D12482BC5A18100154725 /* AddPatronView.swift */,
+				E48D124A2BC5A31800154725 /* CheckoutView.swift */,
 				E46BC8982BC47C140032611A /* OAError.swift */,
 				E46BC7FC2BC429170032611A /* Assets.xcassets */,
 				E46BC7FE2BC429170032611A /* ObserveAnalyze.entitlements */,
@@ -157,6 +165,7 @@
 			children = (
 				E46BC8282BC429860032611A /* Book.swift */,
 				E46BC82C2BC42D640032611A /* Library.swift */,
+				E48D12462BC59F4800154725 /* Patron.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,12 +303,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46BC7FB2BC429160032611A /* ContentView.swift in Sources */,
+				E48D124B2BC5A31800154725 /* CheckoutView.swift in Sources */,
 				E46BC8912BC4728B0032611A /* AddBookView.swift in Sources */,
 				E46BC8992BC47C140032611A /* OAError.swift in Sources */,
 				E46BC7F92BC429160032611A /* ObserveAnalyzeApp.swift in Sources */,
 				E46BC82D2BC42D640032611A /* Library.swift in Sources */,
+				E48D12472BC59F4800154725 /* Patron.swift in Sources */,
 				E46BC8292BC429860032611A /* Book.swift in Sources */,
 				E46BC8972BC47B720032611A /* EditBookView.swift in Sources */,
+				E48D12492BC5A18100154725 /* AddPatronView.swift in Sources */,
 				E46BC8312BC433EC0032611A /* BookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

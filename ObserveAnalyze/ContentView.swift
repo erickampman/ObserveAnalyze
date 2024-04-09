@@ -12,6 +12,8 @@ struct ContentView: View {
 	@Environment(Library.self) private var library
 	@State private var showingAddBook = false
 	@State private var showingEditBook = false
+	@State private var showingAddPatron = false
+	@State private var showingCheckout = false
 	@State private var title = ""
 	@State private var author = ""
 	@State private var bookSelection: Book.ID?
@@ -33,12 +35,27 @@ struct ContentView: View {
 				showingEditBook.toggle()
 			}
 			.disabled(bookSelection == nil)
+			Text("•")
+			Button("Add Patron") {
+				showingAddPatron.toggle()
+			}
+			Button("Checkout") {
+				showingCheckout.toggle()
+			}
+			.disabled(bookSelection == nil)
+
 		}
 		.sheet(isPresented: $showingAddBook) {
 			AddBookView(showingAddBook: $showingAddBook)
 		}
 		.sheet(isPresented: $showingEditBook) {
 			EditBookView(book: try! bookFromID(bookSelection), showingEditBook: $showingEditBook)
+		}
+		.sheet(isPresented: $showingAddPatron) {
+			AddPatronView(showing: $showingAddPatron)
+		}
+		.sheet(isPresented: $showingCheckout) {
+			CheckoutView(book: try! bookFromID(bookSelection), showing: $showingCheckout)
 		}
     }
 	

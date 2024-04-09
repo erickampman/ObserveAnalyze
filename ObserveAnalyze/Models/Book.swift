@@ -13,6 +13,8 @@ class Book: Identifiable, Equatable {
 	var author = ""
 	@ObservationTracked
 	var title = ""
+	@ObservationTracked
+	var patronID = Patron.ID?.none
 	
 	var id: String {
 		return String("\(title): \(author)")
@@ -26,10 +28,16 @@ class Book: Identifiable, Equatable {
 	// I had to add it manually here.
 	@ObservationIgnored private  var _author  = ""
 	@ObservationIgnored private  var _title  = ""
+	@ObservationIgnored private  var _patronID  = Patron.ID?.none
 	
 	init(author: String = "", title: String = "") {
 		self.author = author
 		self.title = title
+	}
+	
+	func setPatron(_ patronID: Patron.ID?) {
+		// FIXME what about already checked out?
+		self.patronID = patronID
 	}
 	@ObservationIgnored private let _$observationRegistrar = Observation.ObservationRegistrar()
 	
