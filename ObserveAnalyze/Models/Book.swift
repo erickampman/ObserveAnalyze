@@ -9,13 +9,60 @@ import Foundation
 import Observation
 
 class Book: Identifiable, Equatable {
-	@ObservationTracked
-	var author = ""
-	@ObservationTracked
-	var title = ""
-	@ObservationTracked
-	var patronID = Patron.ID?.none
+	var author: String = ""
+	{
+		@storageRestrictions(initializes: _author )
+		init(initialValue) {
+		  _author  = initialValue
+		}
+		get {
+		  access(keyPath: \.author )
+		  return _author
+		}
+		set {
+		  withMutation(keyPath: \.author ) {
+			_author  = newValue
+		  }
+		}
+	}
+	@ObservationIgnored private  var _author  = ""
+
+	var title: String = ""
+	{
+		@storageRestrictions(initializes: _title )
+		init(initialValue) {
+		  _title  = initialValue
+		}
+		get {
+		  access(keyPath: \.title )
+		  return _title
+		}
+		set {
+		  withMutation(keyPath: \.title ) {
+			_title  = newValue
+		  }
+		}
+	}
+	@ObservationIgnored private  var _title  = ""
 	
+	var patronID: Patron.ID? = Patron.ID?.none
+	{
+		@storageRestrictions(initializes: _patronID )
+		init(initialValue) {
+		  _patronID  = initialValue
+		}
+		get {
+		  access(keyPath: \.patronID )
+		  return _patronID
+		}
+		set {
+		  withMutation(keyPath: \.patronID ) {
+			_patronID  = newValue
+		  }
+		}
+	}
+	@ObservationIgnored private  var _patronID  = Patron.ID?.none
+
 	var id: String {
 		return String("\(title): \(author)")
 	}
@@ -24,12 +71,6 @@ class Book: Identifiable, Equatable {
 		lhs.id == rhs.id
 	}
 
-	// In ObserveAnalyze2 the below is automatically added for @ObservationTracked.
-	// I had to add it manually here.
-	@ObservationIgnored private  var _author  = ""
-	@ObservationIgnored private  var _title  = ""
-	@ObservationIgnored private  var _patronID  = Patron.ID?.none
-	
 	init(author: String = "", title: String = "") {
 		self.author = author
 		self.title = title
@@ -39,6 +80,7 @@ class Book: Identifiable, Equatable {
 		// FIXME what about already checked out?
 		self.patronID = patronID
 	}
+	
 	@ObservationIgnored private let _$observationRegistrar = Observation.ObservationRegistrar()
 	
 	internal nonisolated func access<Member>(
