@@ -17,47 +17,53 @@ struct ContentView: View {
 	@State private var title = ""
 	@State private var author = ""
 	@State private var bookSelection: Book.ID?
+	
+	@State private var doSplitView = true
 
-    var body: some View {
-        VStack {
-			NavigationStack {
-				List(library.books, selection: $bookSelection) { book in
-					Text(book.id)
+	var body: some View {
+		if doSplitView {
+			
+		} else {
+			VStack {
+				NavigationStack {
+					List(library.books, selection: $bookSelection) { book in
+						Text(book.id)
+					}
 				}
 			}
-        }
-        .padding()
-		.toolbar {
-			Button("Add Book") {
-				showingAddBook.toggle()
+			.padding()
+			.toolbar {
+				Button("Add Book") {
+					showingAddBook.toggle()
+				}
+				Button("Edit Book") {
+					showingEditBook.toggle()
+				}
+				.disabled(bookSelection == nil)
+				Text("•")
+				Button("Add Patron") {
+					showingAddPatron.toggle()
+				}
+				Button("Checkout") {
+					showingCheckout.toggle()
+				}
+				.disabled(bookSelection == nil)
+				
 			}
-			Button("Edit Book") {
-				showingEditBook.toggle()
+			.sheet(isPresented: $showingAddBook) {
+				AddBookView(showingAddBook: $showingAddBook)
 			}
-			.disabled(bookSelection == nil)
-			Text("•")
-			Button("Add Patron") {
-				showingAddPatron.toggle()
+			.sheet(isPresented: $showingEditBook) {
+				EditBookView(book: try! bookFromID(bookSelection), showingEditBook: $showingEditBook)
 			}
-			Button("Checkout") {
-				showingCheckout.toggle()
+			.sheet(isPresented: $showingAddPatron) {
+				AddPatronView(showing: $showingAddPatron)
 			}
-			.disabled(bookSelection == nil)
-
+			.sheet(isPresented: $showingCheckout) {
+				CheckoutView(book: try! bookFromID(bookSelection), showing: $showingCheckout)
+			}
 		}
-		.sheet(isPresented: $showingAddBook) {
-			AddBookView(showingAddBook: $showingAddBook)
-		}
-		.sheet(isPresented: $showingEditBook) {
-			EditBookView(book: try! bookFromID(bookSelection), showingEditBook: $showingEditBook)
-		}
-		.sheet(isPresented: $showingAddPatron) {
-			AddPatronView(showing: $showingAddPatron)
-		}
-		.sheet(isPresented: $showingCheckout) {
-			CheckoutView(book: try! bookFromID(bookSelection), showing: $showingCheckout)
-		}
-    }
+	}
 	
 	func bookFromID(_ id: Book.ID?) throws -> Book {
 		if id == nil { throw OAError.noSelection}
