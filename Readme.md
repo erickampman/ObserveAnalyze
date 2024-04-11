@@ -32,3 +32,6 @@ ObserveAnalyze2 (hopefully) is the same project but it relies on the macros.
 - general note: Since I have not found a way to expand the @Bindable or @Binding macros in Xcode, I'm unable to complete the picture of how ObservationRegistrar is used to notify SwiftUI views that the underlying data has changed. I'd really like to know how this works. 
 - There is general info on property wrappers in [The Swift Programming Language](https://books.apple.com/us/book/the-swift-programming-language-swift-5-7/id881256329) book, available via the Apple Book Store. This is really informative, but doesn't go into the particulars of the @Binding and @Bindable property wrappers.
          
+
+##Caveats
+- I'm aware there are issues checking out books on iPhones. These projects are illustrating aspects of observability and fixing this is left as an exercise for the reader. 

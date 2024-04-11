@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-//	@Environment(Library.self) private var library
 	@Environment(Library.self) private var library
 	@State private var showingAddBook = false
 	@State private var showingEditBook = false
@@ -17,12 +16,11 @@ struct ContentView: View {
 	@State private var title = ""
 	@State private var author = ""
 	@State private var bookSelection: Book.ID?
-	
 	@State private var doSplitView = true
 
 	var body: some View {
 		if doSplitView {
-			
+			OANavigationSplitView()
 		} else {
 			VStack {
 				NavigationStack {

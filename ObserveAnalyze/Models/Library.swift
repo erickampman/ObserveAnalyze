@@ -21,6 +21,60 @@ class Library {
 												  Patron(name: "Kevin Gilbert")
 	]
 	
+	func bookFromID(_ id: Book.ID) -> Book? {
+		return self.books.first { book in
+			book.id == id
+		}
+	}
+	
+	func patronFromID(_ id: Patron.ID) -> Patron? {
+		return self.patrons.first { patron in
+			patron.id == id
+		}
+	}
+
+	/*
+		In the real world this would be the wrong way to
+		go about it, given how likely the set of all books
+		in a library there would be.
+		
+		A reasonable solution might be to track a patron's
+		set of checked out books in the patron itself.
+	 
+		FIXME
+	 */
+	func booksCheckedOutByPatron(_ id: Patron.ID) -> [Book] {
+		var ret = [Book]()
+		
+		for book in books {
+			if book.patronID == id {
+				ret.append(book)
+			}
+		}
+		return ret
+	}
+	
+	func checkedOutTo(_ book: Book) -> Patron.ID? {
+		guard let id = book.patronID else {
+			return nil
+		}
+		guard let patron = self.patronFromID(id) else {
+			return nil // probably an error
+		}
+		return patron.id
+	}
+	
+	func checkedOutDescription(_ book: Book) -> String {
+		guard let id = checkedOutTo(book) else {
+			return "<<Available>>"
+		}
+		guard let patron = self.patronFromID(id) else {
+			return "<<Available>>"	// actually an error FIXME
+		}
+		return patron.id
+	}
+
+	
 	// In ObserveAnalyze2 the below is automatically added for @ObservationTracked.
 	// I had to add it manually here. 
 	@ObservationIgnored private var _books = [Book(author: "The Author", title: "The Title"),

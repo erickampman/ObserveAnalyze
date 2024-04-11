@@ -25,6 +25,8 @@
 		E48D12472BC59F4800154725 /* Patron.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D12462BC59F4800154725 /* Patron.swift */; };
 		E48D12492BC5A18100154725 /* AddPatronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D12482BC5A18100154725 /* AddPatronView.swift */; };
 		E48D124B2BC5A31800154725 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D124A2BC5A31800154725 /* CheckoutView.swift */; };
+		E48D12532BC83A7500154725 /* OANavigationSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D12522BC83A7500154725 /* OANavigationSplitView.swift */; };
+		E48D12552BC83B1F00154725 /* PatronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D12542BC83B1F00154725 /* PatronView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		E48D12462BC59F4800154725 /* Patron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patron.swift; sourceTree = "<group>"; };
 		E48D12482BC5A18100154725 /* AddPatronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPatronView.swift; sourceTree = "<group>"; };
 		E48D124A2BC5A31800154725 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		E48D12522BC83A7500154725 /* OANavigationSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OANavigationSplitView.swift; sourceTree = "<group>"; };
+		E48D12542BC83B1F00154725 /* PatronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatronView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +126,12 @@
 				E46BC8232BC429320032611A /* Models */,
 				E46BC7F82BC429160032611A /* ObserveAnalyzeApp.swift */,
 				E46BC7FA2BC429160032611A /* ContentView.swift */,
+				E48D12522BC83A7500154725 /* OANavigationSplitView.swift */,
 				E46BC8302BC433EC0032611A /* BookView.swift */,
 				E46BC8902BC4728B0032611A /* AddBookView.swift */,
 				E46BC8962BC47B720032611A /* EditBookView.swift */,
 				E48D12482BC5A18100154725 /* AddPatronView.swift */,
+				E48D12542BC83B1F00154725 /* PatronView.swift */,
 				E48D124A2BC5A31800154725 /* CheckoutView.swift */,
 				E46BC8982BC47C140032611A /* OAError.swift */,
 				E46BC7FC2BC429170032611A /* Assets.xcassets */,
@@ -303,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46BC7FB2BC429160032611A /* ContentView.swift in Sources */,
+				E48D12532BC83A7500154725 /* OANavigationSplitView.swift in Sources */,
 				E48D124B2BC5A31800154725 /* CheckoutView.swift in Sources */,
 				E46BC8912BC4728B0032611A /* AddBookView.swift in Sources */,
 				E46BC8992BC47C140032611A /* OAError.swift in Sources */,
@@ -312,6 +319,7 @@
 				E46BC8292BC429860032611A /* Book.swift in Sources */,
 				E46BC8972BC47B720032611A /* EditBookView.swift in Sources */,
 				E48D12492BC5A18100154725 /* AddPatronView.swift in Sources */,
+				E48D12552BC83B1F00154725 /* PatronView.swift in Sources */,
 				E46BC8312BC433EC0032611A /* BookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
